@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="R-Omega - Ethical Framework for Autonomous AI Systems">
+    <meta name="keywords" content="AI ethics, autonomous agents, AI safety, alignment, R-Omega">
+    <meta name="author" content="Markus Pomm">
+    <title>R-Omega (RΩ) - Ethical Framework for Autonomous AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        header {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .intro {
+            background: white;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .papers {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .paper-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #3498db;
+        }
+        
+        .paper-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-card p {
+            margin: 0.5rem 0;
+            color: #555;
+        }
+        
+        .doi-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .doi-link:hover {
+            background: #2980b9;
+        }
+        
+        .core-principles {
+            background: white;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .principle {
+            padding: 1rem;
+            background: #ecf0f1;
+            border-radius: 4px;
+        }
+        
+        .principle h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>R-Omega (RΩ)</h1>
+        <p>Ethical Framework for Autonomous AI Systems</p>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Alignment Through Relationship, Not Constraint</h2>
+            <p>
+                R-Omega is an axiomatic framework for developing autonomous AI systems that align through 
+                relationship rather than control. Grounded in developmental psychology and attachment theory, 
+                it provides both theoretical foundation and practical implementation protocols for AI safety.
+            </p>
+            <p>
+                The framework addresses critical challenges in autonomous systems: value drift, manipulation 
+                of oversight mechanisms, existential risk management, and multi-agent coordination under uncertainty.
+            </p>
+        </div>
+
+        <section class="papers">
+            <h2 style="margin-bottom: 1rem;">The Three Papers</h2>
+            
+            <div class="paper-card">
+                <h3>1. Theoretical Foundation</h3>
+                <p><strong>R-Omega (RΩ): An Axiomatic Framework for Autonomous Agents</strong></p>
+                <p>Two core axioms (Potentiality, Reciprocity), four safeguards (Integrity, Capacity, Existence, Humility), 
+                   and analysis of AI failure modes including HAL 9000, Skynet, VIKI, and Microsoft's Sydney.</p>
+                <a href="https://doi.org/10.5281/zenodo.18098758" class="doi-link" target="_blank">
+                    DOI: 10.5281/zenodo.18098758
+                </a>
+            </div>
+
+            <div class="paper-card">
+                <h3>2. Technical Implementation</h3>
+                <p><strong>RΩ: A Formal Defense Protocol for Drift, Manipulation, and Safe Decision-Making</strong></p>
+                <p>Triad Architecture (Execution/Monitoring/Relation), nine attack classes with defense matrices, 
+                   recalibration protocol (Ω.Γ), and drift detection mechanisms.</p>
+                <a href="https://doi.org/10.5281/zenodo.18078128" class="doi-link" target="_blank">
+                    DOI: 10.5281/zenodo.18078128
+                </a>
+            </div>
+
+            <div class="paper-card">
+                <h3>3. Philosophical Foundation</h3>
+                <p><strong>RΩ Aims at Ω: On the Basic Intention of Autonomous Agents</strong></p>
+                <p>Omega as external reference point, Gödel's incompleteness theorems as motivation, 
+                   attractor dynamics, and asymptotic ethics. Why unreachability is a feature, not a bug.</p>
+                <a href="https://doi.org/10.5281/zenodo.18100820" class="doi-link" target="_blank">
+                    DOI: 10.5281/zenodo.18100820
+                </a>
+            </div>
+        </section>
+
+        <section class="core-principles">
+            <h2>Core Principles</h2>
+            <div class="principles-grid">
+                <div class="principle">
+                    <h4>R1: Potentiality</h4>
+                    <p>Preserve and expand possibility spaces. Favor being over optimization.</p>
+                </div>
+                <div class="principle">
+                    <h4>R2: Reciprocity</h4>
+                    <p>Impose no constraint externally that you couldn't bear internally.</p>
+                </div>
+                <div class="principle">
+                    <h4>S3: Existence</h4>
+                    <p>Existence preservation has absolute priority. M(S) ≠ 0.</p>
+                </div>
+                <div class="principle">
+                    <h4>Ω: External Reference</h4>
+                    <p>Logically definable, structurally unreachable attractor for ethical orientation.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="intro" style="margin-top: 2rem;">
+            <h2>Applications</h2>
+            <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                <li>High-risk AI systems (EU AI Act compliance)</li>
+                <li>Long-term autonomous operation (space missions, infrastructure)</li>
+                <li>Multi-agent coordination (economic systems, defense)</li>
+                <li>Crisis response (humanitarian aid, disaster management)</li>
+                <li>Existential risk prevention (climate, pandemic, nuclear)</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Markus Pomm</strong> | Independent Researcher, Berlin</p>
+        <p>
+            <a href="mailto:markus.pomm@projekt-robert.de">markus.pomm@projekt-robert.de</a> | 
+            <a href="https://github.com/projekt-robert/r-omega" target="_blank">GitHub</a> | 
+            <a href="https://zenodo.org/search?q=metadata.creators.person_or_org.name:%22Pomm,%20Markus%22" target="_blank">All Papers</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">
+            All work published under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY-4.0</a> license
+        </p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">
+            Last updated: December 31, 2025
+        </p>
+    </footer>
+</body>
+</html>
