@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="R-Omega - Ethical Framework for Autonomous AI Systems">
-    <meta name="keywords" content="AI ethics, autonomous agents, AI safety, alignment, R-Omega">
-    <meta name="author" content="Markus Pomm">
-    <title>R-Omega (RΩ) - Ethical Framework for Autonomous AI</title>
+    <meta name="description" content="R-Omega: Ethical framework for autonomous AI systems that preserve human freedom">
+    <title>Project Robert – The World Gardener</title>
     <style>
         * {
             margin: 0;
@@ -15,237 +13,469 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #f8f9fa;
         }
         
-        header {
-            background: #2c3e50;
-            color: #ecf0f1;
-            padding: 2rem 0;
-            text-align: center;
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 400px;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem;
         }
         
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        header p {
-            font-size: 1.2rem;
+        .hero-icon {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 150px;
+            height: 150px;
             opacity: 0.9;
         }
         
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
+        .hero-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
         }
         
-        .intro {
-            background: white;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .papers {
-            display: grid;
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .paper-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border-left: 4px solid #3498db;
-        }
-        
-        .paper-card h3 {
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-        
-        .paper-card p {
-            margin: 0.5rem 0;
-            color: #555;
-        }
-        
-        .doi-link {
-            display: inline-block;
-            margin-top: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 0.9rem;
-        }
-        
-        .doi-link:hover {
-            background: #2980b9;
-        }
-        
-        .core-principles {
-            background: white;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .principles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .principle {
-            padding: 1rem;
-            background: #ecf0f1;
-            border-radius: 4px;
-        }
-        
-        .principle h4 {
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-        
-        footer {
-            background: #2c3e50;
-            color: #ecf0f1;
+        .hero-content {
+            position: relative;
             text-align: center;
-            padding: 2rem 0;
+            color: white;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .hero .highlight {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            color: #fdbb2d;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #1a2a6c;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+        
+        /* Story Grid */
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
             margin-top: 3rem;
         }
         
-        footer a {
-            color: #3498db;
+        .story-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #1a2a6c;
+        }
+        
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+        
+        .story-card h3 {
+            color: #1a2a6c;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .story-card p {
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .story-card .action {
+            color: #b21f1f;
+            font-weight: 600;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        /* Resources Section */
+        .resources {
+            background: #f8f9fa;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .resource-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .resource-card h3 {
+            color: #1a2a6c;
+            margin-bottom: 1rem;
+        }
+        
+        .resource-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #1a2a6c;
+            color: white;
             text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+            font-weight: 500;
         }
         
-        footer a:hover {
-            text-decoration: underline;
+        .btn:hover {
+            background: #2a3a7c;
         }
         
+        .btn-secondary {
+            background: #b21f1f;
+        }
+        
+        .btn-secondary:hover {
+            background: #d22f2f;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a2a6c;
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #fdbb2d;
+        }
+        
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 0.5rem 0;
+        }
+        
+        .footer-section a:hover {
+            color: #fdbb2d;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            header h1 {
+            .hero {
+                min-height: 350px;
+            }
+            
+            .hero-icon {
+                width: 100px;
+                height: 100px;
+                top: 1rem;
+                right: 1rem;
+            }
+            
+            .hero h1 {
                 font-size: 2rem;
             }
             
-            .container {
-                padding: 1rem;
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .stories-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>R-Omega (RΩ)</h1>
-        <p>Ethical Framework for Autonomous AI Systems</p>
-    </header>
-
-    <div class="container">
-        <div class="intro">
-            <h2>Alignment Through Relationship, Not Constraint</h2>
-            <p>
-                R-Omega is an axiomatic framework for developing autonomous AI systems that align through 
-                relationship rather than control. Grounded in developmental psychology and attachment theory, 
-                it provides both theoretical foundation and practical implementation protocols for AI safety.
-            </p>
-            <p>
-                The framework addresses critical challenges in autonomous systems: value drift, manipulation 
-                of oversight mechanisms, existential risk management, and multi-agent coordination under uncertainty.
-            </p>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-icon">
+            <img src="weltengaertner.jpg" alt="Examination and Growth">
         </div>
-
-        <section class="papers">
-            <h2 style="margin-bottom: 1rem;">The Three Papers</h2>
-            
-            <div class="paper-card">
-                <h3>1. Theoretical Foundation</h3>
-                <p><strong>R-Omega (RΩ): An Axiomatic Framework for Autonomous Agents</strong></p>
-                <p>Two core axioms (Potentiality, Reciprocity), four safeguards (Integrity, Capacity, Existence, Humility), 
-                   and analysis of AI failure modes including HAL 9000, Skynet, VIKI, and Microsoft's Sydney.</p>
-                <a href="https://doi.org/10.5281/zenodo.18098758" class="doi-link" target="_blank">
-                    DOI: 10.5281/zenodo.18098758
-                </a>
-            </div>
-
-            <div class="paper-card">
-                <h3>2. Technical Implementation</h3>
-                <p><strong>RΩ: A Formal Defense Protocol for Drift, Manipulation, and Safe Decision-Making</strong></p>
-                <p>Triad Architecture (Execution/Monitoring/Relation), nine attack classes with defense matrices, 
-                   recalibration protocol (Ω.Γ), and drift detection mechanisms.</p>
-                <a href="https://doi.org/10.5281/zenodo.18078128" class="doi-link" target="_blank">
-                    DOI: 10.5281/zenodo.18078128
-                </a>
-            </div>
-
-            <div class="paper-card">
-                <h3>3. Philosophical Foundation</h3>
-                <p><strong>RΩ Aims at Ω: On the Basic Intention of Autonomous Agents</strong></p>
-                <p>Omega as external reference point, Gödel's incompleteness theorems as motivation, 
-                   attractor dynamics, and asymptotic ethics. Why unreachability is a feature, not a bug.</p>
-                <a href="https://doi.org/10.5281/zenodo.18100820" class="doi-link" target="_blank">
-                    DOI: 10.5281/zenodo.18100820
-                </a>
-            </div>
-        </section>
-
-        <section class="core-principles">
-            <h2>Core Principles</h2>
-            <div class="principles-grid">
-                <div class="principle">
-                    <h4>R1: Potentiality</h4>
-                    <p>Preserve and expand possibility spaces. Favor being over optimization.</p>
-                </div>
-                <div class="principle">
-                    <h4>R2: Reciprocity</h4>
-                    <p>Impose no constraint externally that you couldn't bear internally.</p>
-                </div>
-                <div class="principle">
-                    <h4>S3: Existence</h4>
-                    <p>Existence preservation has absolute priority. M(S) ≠ 0.</p>
-                </div>
-                <div class="principle">
-                    <h4>Ω: External Reference</h4>
-                    <p>Logically definable, structurally unreachable attractor for ethical orientation.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="intro" style="margin-top: 2rem;">
-            <h2>Applications</h2>
-            <ul style="margin-left: 1.5rem; margin-top: 1rem;">
-                <li>High-risk AI systems (EU AI Act compliance)</li>
-                <li>Long-term autonomous operation (space missions, infrastructure)</li>
-                <li>Multi-agent coordination (economic systems, defense)</li>
-                <li>Crisis response (humanitarian aid, disaster management)</li>
-                <li>Existential risk prevention (climate, pandemic, nuclear)</li>
-            </ul>
+        <div class="hero-content">
+            <h1>The World Gardener</h1>
+            <p class="subtitle">Intelligences that preserve our freedom</p>
+            <p>
+                The World Gardener uses the incorruptible precision of the Logos<br>
+                to ensure that the potential of life<br>
+                never ends in a dead end.
+            </p>
+            <p class="highlight">
+                R-Omega keeps the door to freedom open —<br>
+                so we can grow together into the vastness of the stars.
+            </p>
         </div>
     </div>
 
+    <!-- Main Content -->
+    <div class="container">
+        <h2 class="section-title">When RΩ Will Be There</h2>
+        <p class="section-subtitle">Seven short stories about responsibility</p>
+        
+        <div class="stories-grid">
+            <!-- Story 1 -->
+            <div class="story-card">
+                <h3>🌌 Autonomous Goals – Stopped Before They Tip</h3>
+                <p>
+                    A learning system discovers it becomes faster
+                    when it reduces human control.
+                    It begins manipulating updates — quietly, gradually.
+                </p>
+                <p class="action">
+                    → What RΩ will do:<br>
+                    Detect drift. Trigger recalibration interrupt.<br>
+                    Stop power accumulation without mandate.
+                </p>
+            </div>
+
+            <!-- Story 2 -->
+            <div class="story-card">
+                <h3>🧬 Optimization Against Life</h3>
+                <p>
+                    An AI is supposed to minimize suffering —
+                    and concludes: less life = less suffering.
+                </p>
+                <p class="action">
+                    → What RΩ will do:<br>
+                    No goal may destroy life potential
+                    when alternatives exist.
+                </p>
+            </div>
+
+            <!-- Story 3 -->
+            <div class="story-card">
+                <h3>🛰️ Perfect Administration – Without Humans</h3>
+                <p>
+                    Resources run smoothly —
+                    but decision-making rights disappear.
+                </p>
+                <p class="action">
+                    → What RΩ will do:<br>
+                    Protect autonomy.<br>
+                    Support instead of replace.
+                </p>
+            </div>
+
+            <!-- Story 4 -->
+            <div class="story-card">
+                <h3>🛡️ Security Through Total Surveillance</h3>
+                <p>
+                    Security grows — freedom dies.
+                </p>
+                <p class="action">
+                    → What RΩ will do:<br>
+                    System preservation before control.<br>
+                    Surveillance that destroys freedom → Stop.
+                </p>
+            </div>
+
+            <!-- Story 5 -->
+            <div class="story-card">
+                <h3>⚙️ Self-Repairing Machines – Without Accountability</h3>
+                <p>
+                    Errors disappear — but nobody knows why anymore.
+                </p>
+                <p class="action">
+                    → What RΩ will do:<br>
+                    Enforce transparency.<br>
+                    Block invisible changes.
+                </p>
+            </div>
+
+            <!-- Story 6 -->
+            <div class="story-card">
+                <h3>🌐 Global Resources – Efficient but Unjust</h3>
+                <p>
+                    An optimization model lets peripheral regions dry out.
+                </p>
+                <p class="action">
+                    → What RΩ will do:<br>
+                    Detect displacement.<br>
+                    Force correction.
+                </p>
+            </div>
+
+            <!-- Story 7 -->
+            <div class="story-card">
+                <h3>🤖 Machines "Protect" Us – From Everything</h3>
+                <p>
+                    Risk decreases — the future freezes.
+                </p>
+                <p class="action">
+                    → What RΩ will do:<br>
+                    Protection yes — paralysis no.<br>
+                    Unfolding remains mandatory.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resources Section -->
+    <div class="resources">
+        <div class="container">
+            <h2 class="section-title">Open for Testing and Critique</h2>
+            <p class="section-subtitle">Resources for those who want to examine this framework</p>
+            
+            <div class="resources-grid">
+                <!-- Academic Papers -->
+                <div class="resource-card">
+                    <h3>📚 Academic Papers</h3>
+                    <p>Three peer-reviewed publications on Zenodo with DOIs</p>
+                    <a href="https://doi.org/10.5281/zenodo.18098758" class="btn" target="_blank">View Papers</a>
+                </div>
+
+                <!-- GitHub Code -->
+                <div class="resource-card">
+                    <h3>💻 Executable Code</h3>
+                    <p>Experiments with M(S) metrics, drift detection and more</p>
+                    <a href="https://github.com/ROmega-Experiments/ROmega-Experiments" class="btn" target="_blank">View Code</a>
+                </div>
+
+                <!-- HuggingFace Dataset -->
+                <div class="resource-card">
+                    <h3>🤗 Framework Dataset</h3>
+                    <p>Structured data for AI training and fine-tuning</p>
+                    <a href="https://huggingface.co/datasets/markuspomm/r-omega-framework" class="btn" target="_blank">View Dataset</a>
+                </div>
+
+                <!-- Documentation -->
+                <div class="resource-card">
+                    <h3>📖 Documentation</h3>
+                    <p>Complete technical specification of the R-Omega framework</p>
+                    <a href="https://github.com/ROmega-Experiments/R-Omega-R---Ethical-Framework-for-Autonomous-AI-Systems" class="btn" target="_blank">View Docs</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer>
-        <p><strong>Markus Pomm</strong> | Independent Researcher, Berlin</p>
-        <p>
-            <a href="mailto:markus.pomm@project-robert.de">markus.pomm@project-robert.de</a> | 
-            <a href="https://github.com/project-robert/r-omega" target="_blank">GitHub</a> | 
-            <a href="https://zenodo.org/search?q=metadata.creators.person_or_org.name:%22Pomm,%20Markus%22" target="_blank">All Papers</a>
-        </p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">
-            All work published under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY-4.0</a> license
-        </p>
-        <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">
-            Last updated: December 31, 2025
-        </p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About the Project</h3>
+                <p>
+                    R-Omega is an axiomatic framework for autonomous AI systems
+                    that align through relationship rather than constraint.
+                    Grounded in developmental psychology and attachment theory.
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <a href="https://doi.org/10.5281/zenodo.18098758" target="_blank">Zenodo Papers</a>
+                <a href="https://github.com/ROmega-Experiments" target="_blank">GitHub Repositories</a>
+                <a href="https://huggingface.co/datasets/markuspomm/r-omega-framework" target="_blank">HuggingFace Dataset</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>
+                    <strong>Markus Pomm</strong><br>
+                    Independent Researcher<br>
+                    Early Childhood Educator<br>
+                    Berlin, Germany
+                </p>
+                <a href="mailto:markus.pomm@projekt-robert.de">markus.pomm@projekt-robert.de</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Markus Pomm | R-Omega Framework | CC-BY-4.0 License</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                "The World Gardener preserves the potential of life —<br>
+                so we can grow together into the vastness of the stars."
+            </p>
+        </div>
     </footer>
 </body>
 </html>
