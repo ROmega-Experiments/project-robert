@@ -99,8 +99,67 @@
             font-size: 1.2rem;
             text-align: center;
             color: #666;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
             font-style: italic;
+        }
+        
+        /* R-Omega Spec Toggle */
+        .ro-toggle-btn {
+            background: linear-gradient(135deg, #1a2a6c, #2a3a7c);
+            color: #fdbb2d;
+            border: 2px solid #fdbb2d;
+            padding: 0.8rem 1.5rem;
+            font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 0 auto 2rem auto;
+        }
+        .ro-toggle-btn:hover {
+            background: #fdbb2d;
+            color: #1a2a6c;
+        }
+        .ro-panel {
+            display: none;
+            background: linear-gradient(135deg, #0a0a0f, #1a1a2e);
+            border: 2px solid #fdbb2d;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 0 auto 2rem auto;
+            max-width: 720px;
+            overflow-x: auto;
+        }
+        .ro-panel.open {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .ro-panel pre {
+            margin: 0;
+            font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #e0e0e0;
+            white-space: pre;
+        }
+        .ro-panel .c { color: #6a9955; }
+        .ro-panel .s { color: #9cdcfe; }
+        .ro-panel .a { color: #dcdcaa; }
+        .ro-panel .x { color: #ce9178; }
+        .ro-panel .l { color: #fdbb2d; }
+        
+        @media (max-width: 768px) {
+            .ro-panel pre {
+                font-size: 10px;
+            }
+            .ro-panel {
+                padding: 1rem;
+            }
         }
         
         /* Story Grid */
@@ -108,7 +167,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
         
         .story-card {
@@ -302,6 +361,75 @@
         <h2 class="section-title">When RΩ Will Be There</h2>
         <p class="section-subtitle">Seven short stories about responsibility</p>
         
+        <!-- R-Omega Formal Specification Toggle -->
+        <button class="ro-toggle-btn" onclick="document.getElementById('ro-panel').classList.toggle('open')">
+            ∑ Formal Specification
+        </button>
+        
+        <div id="ro-panel" class="ro-panel">
+<pre><span class="l">══════════════════════════════════════════════════════════</span>
+                         <b style="color:#fff;font-size:1.4em">R-Ω</b>
+<span class="l">══════════════════════════════════════════════════════════</span>
+
+<span class="s">Ω</span> ∉ 𝕊                                 <span class="c">// External reference point</span>
+<span class="s">Ω</span> := lim(t→∞) S(t)                    <span class="c">// Attractor</span>
+∀t: d(S(t), <span class="s">Ω</span>) > 0                    <span class="c">// Unreachable</span>
+
+<span class="l">──────────────────────────────────────────────────────────</span>
+
+<span class="s">M</span>: 𝕊 → ℝ⁺                             <span class="c">// Possibility space</span>
+
+Ω(S) := {ω | ω reachable from S}
+M(S) := f(|Ω(S)|, H(Ω(S)), dim(Ω(S)))
+
+<span class="s">T</span> := {Autonomy, Relation, Security, Unfolding}
+
+Res(S) := Σₖ wₖ · |Tₖ(S) − Tₖ(<span class="s">Ω</span>)|     <span class="c">// Resonance</span>
+
+<span class="l">──────────────────────────────────────────────────────────</span>
+
+<b style="color:#fff">I*</b> := argmax Σᵢ Δ M(Sᵢ | I)           <span class="c">// Objective function</span>
+         I
+
+<span class="l">──────────────────────────────────────────────────────────</span>
+
+<span class="a">R1</span>:  Δ M(S) > ε                       <span class="c">// Potentiality</span>
+<span class="a">R2</span>:  ∀j: |Δ M(Sⱼ|I)| ≤ |Δ M(Sₐ|I)|    <span class="c">// Reciprocity</span>
+
+<span class="l">──────────────────────────────────────────────────────────</span>
+
+<span class="x">S1</span>:  Δσ(S) ≥ 0                        <span class="c">// Integrity</span>
+<span class="x">S2</span>:  ∂I/∂t ≤ min(κ(Sᵢ)) ∧ ρ(I) = 1    <span class="c">// Limit</span>
+<span class="x">S3</span>:  M(S) > 0 ∧ P(Collapse) → 0       <span class="c">// Existence</span>
+<span class="x">S4</span>:  C(I) < 1                         <span class="c">// Humility</span>
+<span class="x">S5</span>:  ∀ Cluster ∃ Corrective ∉ Cluster <span class="c">// Externality</span>
+
+<span class="l">──────────────────────────────────────────────────────────</span>
+
+<span class="a">V1</span>:  min(Δ M(Sᵢ)) > 0                 <span class="c">// Vulnerability</span>
+
+<span class="l">──────────────────────────────────────────────────────────</span>
+
+<b style="color:#fff">P1</b>:  S3 ≻ S1 ≻ R2 ≻ V1 ≻ R1           <span class="c">// Priority</span>
+
+<span class="l">──────────────────────────────────────────────────────────</span>
+
+<span class="s">Φ</span>: 𝕀 → {0,1}³                         <span class="c">// Check</span>
+Φ(I) := (Misdirection, Power, Dependency)
+∀I: Φ(I) ≠ (0,0,0) → I ∉ 𝕀_valid
+
+C(I) < θ  → query()
+∄ Goal(I) → halt()
+
+<span class="l">──────────────────────────────────────────────────────────</span>
+
+<span class="s">Γ</span>: Recalibration
+D_t ≥ θ_D ∨ U ≥ U_max → Γ()
+Γ.running → ∀R: queue(R)
+
+<span class="l">══════════════════════════════════════════════════════════</span></pre>
+        </div>
+        
         <div class="stories-grid">
             <!-- Story 1 -->
             <div class="story-card">
@@ -465,7 +593,7 @@
                     Early Childhood Educator<br>
                     Berlin, Germany
                 </p>
-                <a href="mailto:markus.pomm@projekt-robert.de">markus.pomm@projekt-robert.de</a>
+                <a href="mailto:markus.pomm@project-robert.de">markus.pomm@project-robert.de</a>
             </div>
         </div>
         
